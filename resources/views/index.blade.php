@@ -1,111 +1,16 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en-US"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en-US"> <![endif]-->
-<!--[if gte IE 8]><html class="ie ie8" lang="en-US"> <![endif]-->
-
-<html dir="ltr" lang="en-US">
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- Google Fonts
-        ============================================= -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Stylesheets
-        ============================================= -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/plugin.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" />
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+@section("title", "POR 10 MIL - Home")
 
 
-    <!-- JavaScripts
-        ============================================= -->
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
+@extends("layouts.template")
 
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+@section('content-general')
 
-    <title>POR 10 MIL</title>
-</head>
-
-<body>
-
-    <!-- MAIN WRAPPER
-        ============================================= -->
     <div id="main-wrapper" class="animsition clearfix">
 
         <!-- HEADER
             ============================================= -->
         <header id="header" class="site-header transparent-header clearfix">
-
-            <div class="header-navigation">
-                <div class="container">
-                    <div class="row">
-                        <div class="logo wow fadeInDown col-md-3" data-wow-delay="1s">
-                            <div class="logo-image">
-                                <a href="index.html"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
-                            </div>
-                        </div>
-
-                        <!-- MOBILE MENU START
-                            ============================================= -->
-                        <div class="mobile-menu wow fadeInDown" data-wow-delay="1s">
-                            <button id="slide-buttons" class="icon icon-navicon-round"></button>
-                        </div>
-
-                        <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
-                            <button class="c-menu__close icon icon-remove-delete"></button>
-                            <ul class="menus-mobile">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
-                                <li class="has-child">
-                                    <a href="#">Documentos</a>
-                                    <ul class="child">
-                                        <li><a href="img/05_SII 2016.pdf">SII 2016</a></li>
-                                        <li><a href="img/Avaluo fiscal 2023.pdf">Avaluo fiscal 2023</a></li>
-                                        <li><a href="img/06_EETT_FAguilar.pdf">Especificaciones técnicas</a></li>
-                                        <li><a href="img/07_IPTC_FAguilar.pdf">Informe profesional técnico</a></li>
-                                        <li><a href="img/L1_ARQ_FAguilar1.pdf">Arquitectura Interna</a></li>
-                                        <li><a href="img/L1_ARQ_FAguilar.pdf">Arquitectura Externa</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contacto</a></li>
-                            </ul>
-                        </nav>
-                        <div id="slide-overlay" class="slide-overlay"></div>
-                        <!-- MOBILE MENU END -->
-
-                        <div class="navigation wow fadeInDown col-md-9" data-wow-delay="1s">
-                            <nav id="main-menu" class="menu">
-                                <ul id="menu-top-menu" class="menus">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
-                                    <li class="has-child">
-                                        <a href="blog.html">Documentos</a>
-                                        <ul class="child">
-                                            <li><a href="img/05_SII 2016.pdf">SII 2016</a></li>
-                                            <li><a href="img/Avaluo fiscal 2023.pdf">Avaluo fiscal 2023</a></li>
-                                            <li><a href="img/06_EETT_FAguilar.pdf">Especificaciones técnicas</a></li>
-                                            <li><a href="img/07_IPTC_FAguilar.pdf">Informe profesional técnico</a></li>
-                                            <li><a href="img/L1_ARQ_FAguilar1.pdf">Arquitectura Interna</a></li>
-                                            <li><a href="img/L1_ARQ_FAguilar.pdf">Arquitectura Externa</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contacto</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include("includes.nav")
         </header>
         <!-- HEADER END -->
 
@@ -417,65 +322,6 @@
             <!-- GALLERY END -->
 
         </section>
-        <!-- CONTENT END -->
-
-        <!-- FOOTER START
-            ============================================= -->
-        <footer id="footer" class="wrapper clearfix">
-            <div class="footer-text wow fadeIn text-center">
+@endsection
 
 
-            </div>
-
-            <div class="footer-copyright wow fadeIn text-center">
-                <div class="container">
-                    <div class="copyright">
-
-
-
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- FOOTER END -->
-
-    </div>
-    <!-- MAIN WRAPPER END -->
-
-    <!-- Footer Scripts
-        ============================================= -->
-    <!-- External -->
-    <script type="text/javascript" src="{{ asset('assets/js/plugin.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
-    <script>
-        (function () {
-
-            function init() {
-                var speed = 300,
-                    easing = mina.backout;
-
-                [].slice.call(document.querySelectorAll('#grid > a')).forEach(function (el) {
-                    var s = Snap(el.querySelector('svg')), path = s.select('path'),
-                        pathConfig = {
-                            from: path.attr('d'),
-                            to: el.getAttribute('data-path-hover')
-                        };
-
-                    el.addEventListener('mouseenter', function () {
-                        path.animate({ 'path': pathConfig.to }, speed, easing);
-                    });
-
-                    el.addEventListener('mouseleave', function () {
-                        path.animate({ 'path': pathConfig.from }, speed, easing);
-                    });
-                });
-            }
-
-            init();
-
-        })();
-    </script>
-
-</body>
-
-</html>
