@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
+    <link rel="stylesheet" href="{{ asset('assets/css/tao.css') }}" type="text/css" />
 
     @yield('content-css')
 
@@ -77,6 +78,8 @@
     <!-- External -->
     <script type="text/javascript" src="{{ asset('assets/js/plugin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         (function () {
 
