@@ -1,10 +1,46 @@
-@section("title", "POR 10 MIL - Home")
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en-US"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en-US"> <![endif]-->
+<!--[if gte IE 8]><html class="ie ie8" lang="en-US"> <![endif]-->
+
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Google Fonts
+        ============================================= -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Stylesheets
+        ============================================= -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugin.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-@extends("layouts.template")
+    <!-- JavaScripts
+        ============================================= -->
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
 
-@section('content-general')
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
+    <title>POR 10 MIL</title>
+    @livewireStyles
+</head>
+
+<body>
+
+    <!-- MAIN WRAPPER
+        ============================================= -->
     <div id="main-wrapper" class="animsition clearfix">
 
         <!-- HEADER
@@ -42,25 +78,32 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="slider-text wow fadeIn" data-wow-delay="0.5s">
-                                <h2 class="wow fadeInLeft" data-wow-delay="1s">¡Participa por la casa de tus sueños!
+                                <h2 class="wow fadeInLeft" data-wow-delay="1s">
+                                    ¡Participa por la casa de tus sueños!
                                 </h2>
-                                <p class="wow fadeIn" data-wow-delay="1.5s">123, Near Shammer Lake, New York - 10001</p>
-                                <h3 class="wow fadeIn" data-wow-delay="2s">$10.000</h3>
+                                <p class="wow fadeIn" data-wow-delay="1.5s">
+                                    123, Near Shammer Lake, New York - 10001
+                                </p>
+                                <h3 class="wow fadeIn" data-wow-delay="2s">
+                                    $10.000
+                                </h3>
                                 <a href="tiket.html" class="button-normal yellow wow fadeIn"
-                                    data-wow-delay="2.5s">COMPRA TU TICKET</a>
+                                    data-wow-delay="2.5s">COMPRA TU TICKET
+                                </a>
                             </div>
                         </div>
 
                         <div class="slider-form col-md-4 wow fadeIn text-center" data-wow-delay="0.5s">
+                           {{-- @livewire("consulta-index") --}}
                             <div class="form-wrap">
                                 <div class="form-appointment">
-                                    <form method="post" action="contact.php">
-                                        <input type="text" name="name" id="name" placeholder="Nombre" />
-                                        <input type="text" name="email" id="email" placeholder="Email" />
+                                    {{-- <form method="post" action="contact.php"> --}}
+                                        <input type="text" name="name" id="name" placeholder="Nombre" wire:model="name"/>
+                                        <input type="text" name="email" id="email" placeholder="Email" wire:model="email"/>
                                         <textarea name="message" id="message" cols="10" rows="2"
                                             placeholder="Mensaje"></textarea>
-                                        <button class="button-normal yellow">Enviar consulta</button>
-                                    </form>
+                                        <button class="button-normal yellow" wire:click="send_question">Enviar consulta</button>
+                                    {{-- </form> --}}
                                 </div>
                             </div>
                         </div>
@@ -80,7 +123,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="title text-center wow fadeIn">
-
                             <h2><span class="bold">Detalles de</span> la propiedad</h2>
                         </div>
 
@@ -122,7 +164,7 @@
 
             <!-- FACILITIES START
                 ============================================= -->
-            <div class="facilities clearfix" style="background-image: url({{ asset('assets/img/content/facilities/facilities.jpg') }});">
+            <div class="facilities clearfix" style="background-image: url('{{ asset('assets/img/content/facilities/facilities.jpg') }}');">
 
                 <div class="facilities-detail wrapper wow fadeIn">
                     <div class="title text-center">
@@ -130,58 +172,42 @@
                     </div>
 
                     <div class="facilities-content">
-
-
-
                         <div class="facilities-item">
                             <h4>REGULARIZADA Y LIBRE DE CONTRIBUCIONES</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>ACCESO A AUTOPISTAS A 5 MINUTOS TANTO AL ORIENTE COMO PONIENTE</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>COLEGIOS Y JARDINES INFANTILES A 5 MINUTOS CAMINANDO</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>METRO LINEA 4 ESTACION TRINIDAD TRAYECTO A PIES 12 MINUTOS</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>ESTACIONES DE SERVICIO COPEC - SHELL – PETROBRAS</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>MINIMARKET CERCANOS EN LA MANZANA</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>CASA TOTALMENTE REMODELADA AÑO 2022 - 2023</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>PLAZAS Y MULTICANCHAS</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>BODEGA y COBERTIZO</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>ESTACIONAMIENTO PARA 5 VEHICULOS CON JARDIN Y PATIO TRASERO</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>EDIFICACION SOLIDA AMBOS PISOS</h4>
                         </div>
-
                         <div class="facilities-item">
                             <h4>FARMACIAS CERCANAS</h4>
                         </div>
-
-
                     </div>
 
                     <a href="tiket.html" class="button-normal yellow">Comprar Ticket</a>
@@ -322,6 +348,67 @@
             <!-- GALLERY END -->
 
         </section>
-@endsection
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START
+            ============================================= -->
+        <footer id="footer" class="wrapper clearfix">
+            <div class="footer-text wow fadeIn text-center">
 
 
+            </div>
+
+            <div class="footer-copyright wow fadeIn text-center">
+                <div class="container">
+                    <div class="copyright">
+
+
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER END -->
+
+    </div>
+    <!-- MAIN WRAPPER END -->
+
+    <!-- Footer Scripts
+        ============================================= -->
+    <!-- External -->
+
+    <script type="text/javascript" src="{{ asset('assets/js/plugin.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
+    <script>
+        (function () {
+
+            function init() {
+                var speed = 300,
+                    easing = mina.backout;
+
+                [].slice.call(document.querySelectorAll('#grid > a')).forEach(function (el) {
+                    var s = Snap(el.querySelector('svg')), path = s.select('path'),
+                        pathConfig = {
+                            from: path.attr('d'),
+                            to: el.getAttribute('data-path-hover')
+                        };
+
+                    el.addEventListener('mouseenter', function () {
+                        path.animate({ 'path': pathConfig.to }, speed, easing);
+                    });
+
+                    el.addEventListener('mouseleave', function () {
+                        path.animate({ 'path': pathConfig.from }, speed, easing);
+                    });
+                });
+            }
+
+            init();
+
+        })();
+    </script>
+    @livewireScripts
+
+</body>
+
+</html>
