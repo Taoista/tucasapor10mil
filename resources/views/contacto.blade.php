@@ -52,18 +52,8 @@
                 <!-- CONTACT FORM START
                 ============================================= -->
                 <div class="contact-form clearfix">
-                    <div class="form wow fadeIn">
-                        <div class="title text-center">
-                            <h2><span class="bold">Contactar con</span> El dueño</h2>
-                        </div>
-                        <form method="post">
-                            <input type="text" name="name" id="name" placeholder="Nombre" />
-                            <input type="text" name="email" id="email" placeholder="Email" />
-                            <input type="text" name="subject" id="subject" placeholder="Asunto" />
-                            <textarea name="message" id="message" cols="45" rows="5" placeholder="Mensaje"></textarea>
-                            <button class="button-normal yellow">Enviar</button>
-                        </form>
-                    </div>
+
+                    @livewire("contacto")
 
                     <div class="maps wow fadeInRight">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.31543005659!2d-70.59965!3d-33.54518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d09560f91ff3%3A0xb6d8c223fde08286!2sChacabuco%209805%2C%208250370%20La%20Florida%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1681069063871!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

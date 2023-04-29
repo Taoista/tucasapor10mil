@@ -26,7 +26,7 @@ class ConsultaIndex extends Component
     function send_question()
     {
         $name = $this->name;
-        $email = $this->email;
+        $email = strtolower(trim($this->email));
         $msg = $this->msg;
 
         if($name == "" OR $email == ""){
