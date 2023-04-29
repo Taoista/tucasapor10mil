@@ -39,6 +39,7 @@
 
     <title>@yield("title")</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @livewireStyles
 </head>
 <body>
 
@@ -104,8 +105,8 @@
 
         })();
     </script>
+    @livewireScripts
     @stack("scripts")
-
     @yield('content-script')
     </body>
 
