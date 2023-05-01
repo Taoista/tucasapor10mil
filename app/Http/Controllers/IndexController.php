@@ -32,5 +32,11 @@ class IndexController extends Controller
         return view("contacto");
     }
 
+    // * seccion de compra de ticket
+    function compra_ticket()
+    {
+        return view("compra-ticket");
+    }
+
 
 }

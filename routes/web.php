@@ -20,3 +20,6 @@ use App\Http\Controllers\IndexController;
 Route::get("/",[IndexController::class, "index"]);
 Route::get("/preguntas",[IndexController::class, "preguntas"]);
 Route::get("/contacto",[IndexController::class, "contacto"]);
+// * seccion de compra de ticket
+Route::get("/compra-ticket",[IndexController::class, "compra_ticket"]);
+

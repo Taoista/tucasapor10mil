@@ -50,8 +50,7 @@
                                 <h3 class="wow fadeIn" data-wow-delay="2s">
                                     $10.000
                                 </h3>
-                                <a href="tiket.html" class="button-normal yellow wow fadeIn"
-                                    data-wow-delay="2.5s">COMPRA TU TICKET
+                                <a href="{{ url('./compra-ticket') }}" class="button-normal yellow wow fadeIn" data-wow-delay="2.5s">COMPRA TU TICKET
                                 </a>
                             </div>
                         </div>
