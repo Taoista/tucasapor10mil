@@ -23,3 +23,6 @@ Route::get("/contacto",[IndexController::class, "contacto"]);
 // * seccion de compra de ticket
 Route::get("/compra-ticket",[IndexController::class, "compra_ticket"]);
 
+// * error en el pago
+Route::get("/pgo-result",[IndexController::class, "pgo_result"]);
+Route::get("/pgo-tbk/{uuid}",[IndexController::class, "pgo_tbk"]);

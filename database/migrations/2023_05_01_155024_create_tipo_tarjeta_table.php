@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('qr_detalle', function (Blueprint $table) {
+        Schema::create('tipo_tarjeta', function (Blueprint $table) {
             $table->id();
-            $table->datetime("fecha")->useCurrent();
-            $table->string("seccion_id", 100);
-            $table->integer("id_detalle_compra");
+            $table->string("cod", 2);
+            $table->string("name", 25);
         });
     }
 
@@ -24,7 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('qr_detalle');
+        Schema::dropIfExists('tipo_tarjeta');
     }
 };
-

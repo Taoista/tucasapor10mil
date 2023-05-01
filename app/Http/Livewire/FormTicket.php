@@ -74,6 +74,11 @@ class FormTicket extends Component
             return false;
         }
 
+        if(strlen($this->telefono) > 10){
+            $this->dispatchBrowserEvent("len_telefono");
+            return false;
+        }
+
         // ? generar el registro
         $compra = new DetalleCompras;
         $compra->nombre = $this->nombre;

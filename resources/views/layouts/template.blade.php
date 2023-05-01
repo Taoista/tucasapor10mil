@@ -76,6 +76,9 @@
     <!-- Footer Scripts
         ============================================= -->
     <!-- External -->
+    <script>
+        const _Url = '{{  url("")."/" }}'
+    </script>
     <script type="text/javascript" src="{{ asset('assets/js/plugin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

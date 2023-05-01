@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('transbank', function (Blueprint $table) {
             $table->id();
-            $table->datetime("fecha")->default(now());
+            $table->uuid()->unique();
+            $table->datetime("fecha")->useCurrent();
             $table->boolean("estado")->default(0);
             $table->integer("id_detalle_compra")->default(0);
             $table->string("seccion_id", 100);

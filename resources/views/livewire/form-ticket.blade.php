@@ -22,6 +22,10 @@
             Swal.fire('Compra','Debe llenar los campos para continuar','error');
         })
 
+        window.addEventListener("len_telefono", (e) => {
+            Swal.fire('Telefono','El telefono debe contener no mas de 10 caracteres','error');
+        })
+
         window.addEventListener("loading", (e) => {
             Swal.fire({
                     html:'<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
@@ -38,9 +42,23 @@
         window.addEventListener("call_pgo_tbk", (e) => {
             let id_compra = e.detail.id_compra;
             new Promise((resolve, reject) => {
-                resolve("estoy llamando a transbank"+ id_compra)
+                const parameters = {"id_compra" : id_compra}
+                $.ajax({
+                    data: parameters,
+                    url:  _Url+"api/iniciar_compra",
+                    type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    beforeSend:function(){
+                    },
+                    success:function(response){
+                        resolve(response);
+                    }
+                })
+
             }).then(res => {
-                alert(res)
+                window.location.href = res
             })
         })
 

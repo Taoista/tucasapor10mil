@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
+        "simplesoftwareio/simple-qrcode": "~4",
         "transbank/transbank-sdk": "~2.0"
     },
     "require-dev": {
@@ -27,7 +28,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/helper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
