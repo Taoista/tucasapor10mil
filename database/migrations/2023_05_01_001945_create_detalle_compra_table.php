@@ -17,8 +17,10 @@ return new class extends Migration
             $table->boolean("estado")->default(0);
             $table->integer("id_tbk")->default(0);
             $table->string("nombre", 100);
+            $table->string("rut", 10);
             $table->string("email", 100);
             $table->string("direccion", 100);
+            $table->string("region", 100);
             $table->string("ciudad", 100);
             $table->string("codigo_postal", 50);
             $table->string("telefono", 10);

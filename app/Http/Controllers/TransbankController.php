@@ -103,11 +103,12 @@ class TransbankController extends Controller
 
                 $email_admin = Configuracion::select("dato")->where("detalle", "email-contact")->get();
 
-                $correo = new ComprobantePagoMailable($qr);
+                $correo = new ComprobantePagoMailable($qr, $data->uuid);
                 // ? envio email al dmin
                 Mail::to($email_admin->first()->dato)->send($correo);
                 // ? envio correo al cliente
                 $email_cliente = DetalleCompras::where("id", $id_order)->get()->first()->email;
+                $correo = new ComprobantePagoMailable($qr, $data->uuid);
                 Mail::to($email_cliente)->send($correo);
                 return redirect("./pgo-tbk".'/'.$data->uuid);
 
