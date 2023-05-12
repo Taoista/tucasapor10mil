@@ -32,7 +32,9 @@ class ComprobantePagoMailable extends Mailable
 
     public $fecha;
     public $hora;
-
+    public $tipo_tarjeta;
+    public $n_tarjeta;
+    public $cuotas;
     /**
      * Create a new message instance.
      */
@@ -54,7 +56,15 @@ class ComprobantePagoMailable extends Mailable
         $this->fecha_db = $data->first()->fecha;
 
         $fecha_data = DateTime::createFromFormat('Y-m-d H:i:s', $this->fecha_db);
-        $fecha = $fecha_data->format('d/m/Y');
+        $this->fecha = $fecha_data->format('d/m/Y');
+
+        $this->hora = $fecha_data->format('H:i');
+
+        $this->tipo_tarjeta = $data->first()->tipo_tarjeta;
+
+        $this->n_tarjeta = $data->first()->n_tarjeta;
+
+        $this->cuotas = $data->first()->cuotas;
 
         $this->cantidad = 1;
     }
@@ -93,8 +103,11 @@ class ComprobantePagoMailable extends Mailable
     function get_datat()
     {
         $data = Transbank::select("transbank.id","transbank.uuid", "transbank.fecha","dc.nombre", "dc.email", "dc.direccion",
-                            "dc.ciudad", "dc.telefono", "dc.region", "dc.codigo_postal")
+                            "dc.ciudad", "dc.telefono", "dc.region", "dc.codigo_postal", "tt.name AS tipo_tarjeta",
+                            "transbank.cardNumber AS n_tarjeta", "transbank.installmentsNumber AS cuotas",
+                            "transbank.installmentsAmount AS val_cuotas")
                             ->join("detalle_compra AS dc", "dc.id_tbk", "transbank.id_detalle_compra")
+                            ->join("tipo_tarjeta AS tt", "tt.cod","transbank.paymentTypeCode")
                             ->where("transbank.uuid", $this->uud)
                             ->get();
         return $data;

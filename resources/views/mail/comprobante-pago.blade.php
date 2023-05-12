@@ -636,7 +636,7 @@
 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 24px;"><span style="font-size:16px;">Order Date</span></p>
+<p style="margin: 0; mso-line-height-alt: 24px;"><span style="font-size:16px;">Fecha</span></p>
 </div>
 </div>
 </td>
@@ -647,7 +647,7 @@
 <td class="pad" style="padding-bottom:15px;padding-left:25px;padding-right:25px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">16/01/1988</span></strong></p>
+<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">{{ $fecha }}</span></strong></p>
 </div>
 </div>
 </td>
@@ -660,7 +660,7 @@
 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 24px;"><span style="font-size:16px;"> Name</span></p>
+<p style="margin: 0; mso-line-height-alt: 15px;"><span style="font-size:16px;">{{ strtoupper($nombre) }}</span></p>
 </div>
 </div>
 </td>
@@ -684,7 +684,7 @@
 <td class="pad" style="padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 24px;"><span style="font-size:16px;">Customer ID</span></p>
+<p style="margin: 0; mso-line-height-alt: 15px;"><span style="font-size:16px;">Customer ID</span></p>
 </div>
 </div>
 </td>
@@ -819,7 +819,7 @@
 <td class="pad" style="padding-bottom:5px;padding-left:25px;padding-right:25px;padding-top:5px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">DEBITO</span></strong></p>
+<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">{{ strtoupper($tipo_tarjeta) }}</span></strong></p>
 </div>
 </div>
 </td>
@@ -852,6 +852,7 @@
 </td>
 </tr>
 </table>
+@if($cuotas != 0)
 <table border="0" cellpadding="0" cellspacing="0" class="text_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:5px;padding-left:25px;padding-right:25px;padding-top:5px;">
@@ -863,6 +864,7 @@
 </td>
 </tr>
 </table>
+@endif
 <table border="0" cellpadding="0" cellspacing="0" class="text_block block-3" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:5px;padding-left:25px;padding-right:25px;padding-top:5px;">
@@ -882,34 +884,39 @@
 <td class="pad" style="padding-bottom:5px;padding-left:25px;padding-right:25px;padding-top:5px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">6969</span></strong></p>
+<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">{{ $n_tarjeta }}</span></strong></p>
 </div>
 </div>
 </td>
 </tr>
 </table>
+
+@if($cuotas != 0)
 <table border="0" cellpadding="0" cellspacing="0" class="text_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:5px;padding-left:25px;padding-right:25px;padding-top:5px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">3</span></strong></p>
+<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">{{ $cuotas }}</span></strong></p>
 </div>
 </div>
 </td>
 </tr>
 </table>
+@endif
+@if($cuotas != 0)
 <table border="0" cellpadding="0" cellspacing="0" class="text_block block-3" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:5px;padding-left:25px;padding-right:25px;padding-top:5px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px; color: #ffffff; line-height: 1.5;">
-<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">3490</span></strong></p>
+<p style="margin: 0; mso-line-height-alt: 18px;"><strong><span style="font-size:16px;">{{ $val_cuotas }}</span></strong></p>
 </div>
 </div>
 </td>
 </tr>
 </table>
+@endif
 <div class="spacer_block block-4" style="height:30px;line-height:30px;font-size:1px;"> </div>
 </td>
 </tr>
@@ -1039,7 +1046,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block block-1" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-<div align="center" class="alignment" style="line-height:10px"><img alt="Your Logo Placeholder" src="images/MCC_teaser_yourlogo.png" style="display: block; height: auto; border: 0; width: 133px; max-width: 100%;" title="Your Logo Placeholder" width="133"/></div>
+<div align="center" class="alignment" style="line-height:10px"><img alt="" src="{{ asset("assets/img/logo.png") }}" style="display: block; height: auto; border: 0; width: 133px; max-width: 100%;" title="" width="133"/></div>
 </td>
 </tr>
 </table>
@@ -1064,19 +1071,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="icons_block block-1" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="vertical-align: middle; padding-bottom: 5px; padding-top: 5px; color: #9d9d9d; font-family: inherit; font-size: 15px; text-align: center;">
-<table cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-<tr>
-<td class="alignment" style="vertical-align: middle; text-align: center;"><!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-<!--[if !vml]><!-->
-<table cellpadding="0" cellspacing="0" class="icons-inner" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;"><!--<![endif]-->
-<tr>
-<td style="vertical-align: middle; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"><a href="https://www.designedwithbee.com/" style="text-decoration: none;" target="_blank"><img align="center" alt="Designed with BEE" class="icon" height="32" src="images/bee.png" style="display: block; height: auto; margin: 0 auto; border: 0;" width="34"/></a></td>
-<td style="font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 15px; color: #9d9d9d; vertical-align: middle; letter-spacing: undefined; text-align: center;"><a href="https://www.designedwithbee.com/" style="color: #9d9d9d; text-decoration: none;" target="_blank">Designed with BEE</a></td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
+
 </td>
 </tr>
 </table>
