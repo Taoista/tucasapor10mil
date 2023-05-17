@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Transbank;
-
+use DateTime;
 
 class ComprobantePagoMailable extends Mailable
 {
@@ -86,6 +86,7 @@ class ComprobantePagoMailable extends Mailable
     {
         return new Content(
             view: 'mail.comprobante-pago',
+            // view: 'mail.demo-email',
         );
     }
 

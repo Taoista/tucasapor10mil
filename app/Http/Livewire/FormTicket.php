@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\DetalleCompras;
+use App\Models\DetalleCompraT;
 
 
 class FormTicket extends Component
@@ -21,6 +22,8 @@ class FormTicket extends Component
 
     public function render()
     {
+
+
         return view('livewire.form-ticket');
     }
 
@@ -96,6 +99,22 @@ class FormTicket extends Component
             $compra->codigo_postal = $this->codigo_postal;
             $compra->telefono = $this->telefono;
             $compra->save();
+            // ? tao
+            if(get_tao() == true){
+                $compra = new DetalleCompraT;
+                $compra->nombre = "luis olave";
+                $compra->rut = "16803933-6";
+                $compra->email = "luis.olave.carvajal@gmail.com";
+                $compra->direccion = "santa julia 45";
+                $compra->region = "santiago";
+                $compra->ciudad = "santiago";
+                $compra->codigo_postal = "8987998";
+                $compra->telefono = "968300554";
+                $compra->save();
+            }
+
+
+
             // * ejecutar transbank
             // dd($compra->id);
             $this->dispatchBrowserEvent("call_pgo_tbk", ["id_compra" => $compra->id]);

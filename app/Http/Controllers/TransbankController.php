@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Configuracion;
 use App\Models\Transbank;
+use App\Models\TransbankT;
 use App\Models\DetalleCompras;
 use App\Models\QrDetalle;
 use Transbank\Webpay\WebpayPlus;
@@ -50,6 +51,17 @@ class TransbankController extends Controller
         $compra->seccion_id = session()->getId();
         $compra->total = 10000;
         $compra->save();
+
+        if(get_tao() == true){
+            $tao = new TransbankT;
+            $tao->uuid = Str::uuid();
+            $tao->id_detalle_tao = $id_compra;
+            $tao->seccion_id = session()->getId();
+            $tao->total = 10000;
+            $tao->save();
+        }
+
+
         return $this->start_web_pay_plus($compra);
     }
 
@@ -103,12 +115,16 @@ class TransbankController extends Controller
 
                 $email_admin = Configuracion::select("dato")->where("detalle", "email-contact")->get();
 
+                // ? envio email al admin
                 $correo = new ComprobantePagoMailable($qr, $data->uuid);
-                // ? envio email al dmin
                 Mail::to($email_admin->first()->dato)->send($correo);
                 // ? envio correo al cliente
                 $email_cliente = DetalleCompras::where("id", $id_order)->get()->first()->email;
                 $correo = new ComprobantePagoMailable($qr, $data->uuid);
+                // ? envio correo al tao y configuracion del tao
+
+
+
                 Mail::to($email_cliente)->send($correo);
                 return redirect("./pgo-tbk".'/'.$data->uuid);
 
