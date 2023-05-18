@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Mail\ConsultaMailable;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Configuracion;
 
 class ConsultaIndex extends Component
 {
@@ -33,10 +34,10 @@ class ConsultaIndex extends Component
             $this->dispatchBrowserEvent("send_error");
             return false;
         }
+        $email_admin = Configuracion::select("dato")->where("detalle", "email-contact")->get();
 
         $contact = new ConsultaMailable($email, $name, $msg);
-
-        Mail::to("pepeito@demo.cl")->send($contact);
+        Mail::to($email_admin->first()->dato)->send($contact);
 
         $this->name = "";
         $this->email = "";

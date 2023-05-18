@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Configuracion;
 use App\Models\Transbank;
-use App\Models\TransbankT;
+// use App\Models\TransbankT;
 use App\Models\DetalleCompras;
 use App\Models\QrDetalle;
 use Transbank\Webpay\WebpayPlus;
@@ -52,14 +52,14 @@ class TransbankController extends Controller
         $compra->total = 10000;
         $compra->save();
 
-        if(get_tao() == true){
-            $tao = new TransbankT;
-            $tao->uuid = Str::uuid();
-            $tao->id_detalle_tao = $id_compra;
-            $tao->seccion_id = session()->getId();
-            $tao->total = 10000;
-            $tao->save();
-        }
+        // if(get_tao() == true){
+        //     $tao = new TransbankT;
+        //     $tao->uuid = Str::uuid();
+        //     $tao->id_detalle_tao = $id_compra;
+        //     $tao->seccion_id = session()->getId();
+        //     $tao->total = 10000;
+        //     $tao->save();
+        // }
 
 
         return $this->start_web_pay_plus($compra);

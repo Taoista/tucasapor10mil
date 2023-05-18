@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Mail\ContactoMailable;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Configuracion;
 
 class Contacto extends Component
 {
@@ -31,9 +32,9 @@ class Contacto extends Component
             $this->dispatchBrowserEvent("send_error");
             return false;
         }
-
+        $email_admin = Configuracion::select("dato")->where("detalle", "email-contact")->get();
         $correo = new ContactoMailable($name, $email, $asunto, $msg);
-        Mail::to("taoista@demo.cl")->send($correo);
+        Mail::to($email_admin->first()->dato)->send($correo);
         $this->dispatchBrowserEvent("send_email");
 
         $this->name = "";
